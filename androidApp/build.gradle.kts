@@ -5,11 +5,11 @@ plugins {
 
 android {
     namespace = "com.serkangurel.recipecomposekmm.android"
-    compileSdk = 32
+    compileSdk = Versions.androidCompileSdk
     defaultConfig {
         applicationId = "com.serkangurel.recipecomposekmm.android"
-        minSdk = 24
-        targetSdk = 32
+        minSdk = Versions.androidMinSdk
+        targetSdk = Versions.androidTargetSdk
         versionCode = 1
         versionName = "1.0"
     }
@@ -17,7 +17,7 @@ android {
         compose = true
     }
     composeOptions {
-        kotlinCompilerExtensionVersion = "1.3.0"
+        kotlinCompilerExtensionVersion = "1.3.2"
     }
     packagingOptions {
         resources {
@@ -33,10 +33,6 @@ android {
 
 dependencies {
     implementation(project(":shared"))
-    implementation("androidx.compose.ui:ui:1.2.1")
-    implementation("androidx.compose.ui:ui-tooling:1.2.1")
-    implementation("androidx.compose.ui:ui-tooling-preview:1.2.1")
-    implementation("androidx.compose.foundation:foundation:1.2.1")
-    implementation("androidx.compose.material:material:1.2.1")
-    implementation("androidx.activity:activity-compose:1.5.1")
+    implementation(Libs.AndroidX.activityCompose)
+    implementation(Libs.Koin.android)
 }

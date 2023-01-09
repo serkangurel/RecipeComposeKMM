@@ -1,9 +1,14 @@
 plugins {
     //trick: for the same plugin versions in all sub-modules
-    id("com.android.application").version("7.3.1").apply(false)
-    id("com.android.library").version("7.3.1").apply(false)
-    kotlin("android").version("1.7.10").apply(false)
-    kotlin("multiplatform").version("1.7.10").apply(false)
+    val kotlinVersion = Versions.kotlinVersion
+    val agpVersion = Versions.agpVersion
+
+    id("com.android.application") version agpVersion apply false
+    id("com.android.library") version agpVersion apply false
+    kotlin("android") version kotlinVersion apply false
+    kotlin("jvm") version kotlinVersion apply false
+    kotlin("plugin.serialization") version kotlinVersion apply false
+    kotlin("multiplatform") version kotlinVersion apply false
 }
 
 tasks.register("clean", Delete::class) {
